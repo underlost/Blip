@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="contents" id="add-list">
+<h3 class="header">Create List</h3>
+
+<form method="POST" action="" id="add_list_form" class="wide">
+  {% csrf_token %}
+  {% for field in form %}
+    <p>
+      <label id="{{ field.auto_id }}">{{ field.label }} - <span class="help">{{ field.help_text }}</label>
+      {% if field.errors %}
+        <p class="errors">{{ field.errors.as_text }}</p>
+      {% endif %}
+      {{ field }}
+    </p>
+  {% endfor %}
+    <p class="submit"><input type="submit" class="btn" value="Create list"></p>
+</form>
+</section>
+{% endblock %}

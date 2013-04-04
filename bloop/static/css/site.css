@@ -1,0 +1,325 @@
+/* @override http://blip.underlost.net/static/css/site.css */
+
+/* Default styles */
+
+body {
+	background: url('/static/img/retina_dust.png') center fixed;
+	font-weight: 400;
+}
+
+#wrapper {
+	position: relative;
+	margin: 0 auto 10px;
+	padding: 10px;
+}
+
+.none {
+	display: none;
+}
+
+p {
+	font-weight: 400;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+	-webkit-transition: color .25s;
+	-moz-transition: color .25s;
+	transition: color .25s;
+}
+
+a:hover img.portrait {
+	opacity: 0.9;
+}
+
+aside#sidebar {
+	font-family: "freight-sans-pro",sans-serif;
+	position: fixed;
+	top: 100px;
+	float: left;
+	text-align: right;
+	width: 175px;
+	margin-left: -200px;
+	display: none;
+}
+
+header[role=masthead] {
+	height: 50px;
+}
+
+header[role=masthead] h1 {
+	font-family: "freight-sans-pro",sans-serif;	
+	line-height: 24px;
+	margin: 0;
+	text-align: right;
+	float: right;
+}
+
+header[role=masthead] h1 a {
+	font-weight: 900;
+	font-size: 24px;
+	text-shadow: #ccc 1px 1px 4px;
+}
+
+header[role=masthead] h1 a,
+header[role=masthead] h1 a:visited {
+	color: #333;
+}
+
+header[role=masthead] h1 a:hover {
+	text-shadow: #bbb 1px 1px 10px;
+	text-decoration: none;
+	color: #666;
+}
+
+header[role=masthead] h1 a small {
+	display: block;
+	font-weight: 500;
+	font-size: 14px;
+	margin-top: 7px;	
+}
+
+aside#sidebar li {
+	font-weight: 500;
+}
+
+aside#sidebar li a{
+	display: block;
+	font-size: 14px;
+	font-weight: 500;
+	color: #5b5c61;
+}
+
+aside#sidebar li a:hover {
+	text-decoration: none;
+	color: #333;
+}
+
+section.contents {
+	background: #f9f9f9;
+	border: 1px solid #aaa;
+	position: relative;
+	margin-bottom: 30px;
+}
+
+h2 {
+	font-family: 'ff-meta-web-pro', sans-serif;
+	font-size: 20px;
+	line-height: 28px;	
+}
+
+h3.header {
+	font-family: 'ff-meta-web-pro', sans-serif;
+	background: #eee;
+	margin-top: 0;
+	padding: 15px 40px 10px;
+	color: #555;
+	font-weight: 500;
+	margin-bottom: 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.photo {
+	position: relative;
+	height: 250px;
+	border: 1px solid #333;
+	background: url('/static/img/low_contrast_linen.png');
+
+}
+
+.photo img {
+	width: 100%;
+	height: auto;
+}
+
+.photo:after {
+	content: " ";
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border: 1px solid rgba(255, 255, 255, .1);
+	border-bottom: 0;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, .15)), to(rgba(0, 0, 0, .25))), -webkit-gradient(linear, left top, right bottom, color-stop(0, rgba(255, 255, 255, 0)), color-stop(0.5, rgba(255, 255, 255, .1)), color-stop(0.501, rgba(255, 255, 255, 0)), color-stop(1, rgba(255, 255, 255, 0)));
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, .15), rgba(0, 0, 0, .25)), -moz-linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0));
+	background: linear-gradient(top, rgba(255, 255, 255, .15), rgba(0, 0, 0, .25)), linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0));
+	-webkit-background-origin: border-box;
+	-moz-background-origin: border;
+	background-origin: border-box;
+}
+
+footer p {
+	font-size: 14px;
+	margin-top: 20px;
+	text-align: center;
+}
+
+p.last-posted {
+	color: #aaa;
+	padding: 20px 0 0 40px;
+}
+
+.blip-group {
+	padding: 20px 40px 10px;
+	border-bottom: 1px solid #d5d5d5;
+}
+
+
+.blip-group h2 a {
+	font-size: 14px;
+	padding-left: 5px;
+}
+
+.blip-group a.add-more {
+	color: #333;
+}
+
+.blip {
+	padding: 20px 40px 15px;
+	border-bottom: 1px solid #d5d5d5;
+}
+
+.blip .date {
+	font-size: 13px;
+	color: #999;
+}
+
+.blip .meta {
+	font-size: 13px;
+	color: #999;
+}
+
+.blip .date a{
+	color: #999;	
+}
+
+.blip .date i {
+	opacity: .5;
+}
+
+.blip h2.u-2 {
+	margin: 0 0 5px;
+	font-size: 17px;
+}
+
+.blip h2.u-2 a {
+	color: #333;
+}
+
+
+#user-info {
+	position: relative;
+	display: block;
+	height: 100px;
+	margin-top: -35px;
+	padding:  0 40px 0;
+}
+
+#user-info h2 {
+	color: #999;
+	font-weight: 500;
+	padding-top: 40px;
+	line-height: 15px;
+}
+
+#user-info h2 a {
+	color: #333;
+	font-weight: 600;
+}
+
+#user-info img {
+	float: left;
+	margin-right: 15px;
+	border: 1px solid #333;
+	-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, .1), 0 2px 3px rgba(0, 0, 0, .1);
+	-moz-box-shadow: 0 2px 10px rgba(0, 0, 0, .1), 0 2px 3px rgba(0, 0, 0, .1);
+	-o-box-shadow: 0 2px 10px rgba(0, 0, 0, .1), 0 2px 3px rgba(0, 0, 0, .1);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, .1), 0 2px 3px rgba(0, 0, 0, .1);
+}
+
+.registration {
+	padding: 40px;
+}
+
+#quickpost {
+	float: right;
+	display: block;
+	margin: 15px 40px;
+}
+
+
+
+#list-quickpost {
+	float: right;
+}
+
+.meta a {
+	color: #999;
+	margin-right: 15px;
+}
+
+.meta i {
+	opacity: .3;
+}
+
+span.u-wrap {
+	display: block;
+	height: 24px;
+	margin-bottom: 5px;
+}
+
+span.u-wrap img#avatar-small {
+	float: left;
+	margin-right: 5px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+
+form#add_entry_form {
+	padding: 30px 40px;
+}
+
+form#add_entry_form textarea {
+	margin-bottom: 15px;
+}
+
+.modal-footer {
+	background: none;
+}
+
+@media (min-width: 500px) {
+
+	#wrapper {	
+		max-width: 520px;
+		
+	}	
+
+	section.contents {
+		-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, .1), 0 2px 3px rgba(0, 0, 0, .1);
+		-moz-box-shadow: 0 2px 10px rgba(0, 0, 0, .5), 0 2px 3px rgba(0, 0, 0, .5);
+		-o-box-shadow: 0 2px 10px rgba(0, 0, 0, .5), 0 2px 3px rgba(0, 0, 0, .5);
+		box-shadow: 0 2px 10px rgba(0, 0, 0, .1), 0 2px 3px rgba(0, 0, 0, .1);
+	}
+}
+
+
+@media (max-width: 480px) {
+	
+	aside#sidebar,
+	header[role=masthead] h1 {
+	display: none;
+	}
+
+	#wrapper {
+		
+	}
+	
+	.photo {
+		height: 250px;
+		max-width: 480px;
+	}	
+}

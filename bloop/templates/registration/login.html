@@ -1,0 +1,38 @@
+{% extends "registration/base.html" %}
+
+{% block title %}Log in | {% endblock %}
+
+{% block content %}
+<section class="contents" id="accounts">
+{% if user.is_authenticated %}Already Logged in. {% else %}
+
+<div class="registration">
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+<form class="form-stacked" method="post" action="{% url django.contrib.auth.views.login %}">{% csrf_token %}
+
+<div class="clearfix"> 
+	<label for="username">Username</label> 
+    <div class="input"> 
+    	{{ form.username }} 
+    </div> 
+</div><!-- /clearfix -->
+
+<div class="clearfix"> 
+	<label for="username">password</label> 
+    <div class="input"> 
+    	{{ form.password }} 
+    </div> 
+</div><!-- /clearfix -->  
+
+<p><a href="{% url auth_password_reset %}">Forgot</a> your password?  <a href="{% url registration_register %}">Need an account</a>?</p>
+
+<input class="btn primary small btn-info" type="submit" value="login" />
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+</div>
+{% endif %}
+</section>
+{% endblock %}

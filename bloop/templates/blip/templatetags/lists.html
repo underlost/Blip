@@ -1,0 +1,6 @@
+<ul class="unstyled lists">
+	<li>My lists</li>
+	{% for object in objects %}
+	<li><a href="{% url blip-entry-list object.owner object.slug %}">{{ object.name|safe }}</a></li> 
+	{% endfor %}
+</ul>

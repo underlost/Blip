@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load humanize %}
+
+<section class="contents" id="my-lists">
+<h3 class="header">My lists:</h3>
+
+  {% for t in entry_types %}
+  <div id="{{ t.slug }}" class="blip-group">
+    <a href="{% url blip-add-entry-to-list t.owner t.slug %}" class="btn btn-info" id="list-quickpost"><i class="icon-edit icon-white"></i></a>
+    <h2>{{ t.name }} <a class="view-all" href="{% url blip-entry-list t.owner t.slug %}">View all</a></h2>
+  </div>
+  {% endfor %}
+</section>
+
+<section class="contents" id="my-blips">
+<h3 class="header">Recent Blips <small><a href="#">View all</a></small></h3>
+
+  {% for entry in entries|slice:":5" %}
+  <div class="blip">
+    <div class="entry" id="blip-{{ entry.id }}">{{ entry.body_html|safe }}</div>
+    <p class="date"><i class="icon-time"></i> <a href="#">{{ entry.pub_date|naturaltime }}</a> by {{ entry.owner }} {% if entry.entry_type %}in <a href="#">{{entry.entry_type }}</a>.{% endif %} </a></p>
+  
+  <a href="{% url blip-edit-entry entry.id %}">edit</a> |
+  <a href="{% url blip-delete-entry entry.id %}">delete</a>
+  </div>
+  {% endfor %}
+</section>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="contents" id="edit-entry">
+{% if adding %}
+  <h3 class="header">{{ entry_type }}</h3>
+{% elif adding2 %}
+	<h3 class="header">New Blip</h3>
+{% else %}
+  <h3 class="header">Editing</h3>
+{% endif %}
+
+<form method="POST" action="" id="add_entry_form" class="wide">
+  {% csrf_token %}
+  
+	{{form.body}}
+	
+	<label class="checkbox pull-right">
+	{{form.is_private}} Hide Blip from public?
+	</label>
+
+  {% if adding or adding2 %}
+    <p class="submit"><input type="submit" class="btn" value="Post"></p>
+  {% else %}
+   <p class="submit"><input type="submit" class="btn" value="Save"></p>
+  {% endif %}
+</form>
+</section>
+{% endblock %}

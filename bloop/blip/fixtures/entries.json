@@ -1,0 +1,100 @@
+[
+  {
+    "pk": 10,
+    "model": "blip.entry",
+    "fields": {
+      "body": "Running into an issue with RSS feeds. Due to timezones, some feeds appear to be posted from future dates. Could modify script to check against it, but just easier adding two separate date fields until I figure it out- when it was published, and when it was added to the site. ",
+      "entry_type": 1,
+      "body_html": "<p>Running into an issue with RSS feeds. Due to timezones, some feeds appear to be posted from future dates. Could modify script to check against it, but just easier adding two separate date fields until I figure it out- when it was published, and when it was added to the site. </p>",
+      "owner": [
+        "underlost"
+      ],
+      "pub_date": "2012-07-28T00:39:57.458",
+      "is_private": false
+    }
+  },
+  {
+    "pk": 9,
+    "model": "blip.entry",
+    "fields": {
+      "body": "Django schema is a pain if you dont have a local db setup and running for your app. Had to manually build a migration for South. ",
+      "entry_type": 1,
+      "body_html": "<p>Django schema is a pain if you dont have a local db setup and running for your app. Had to manually build a migration for South. </p>",
+      "owner": [
+        "underlost"
+      ],
+      "pub_date": "2012-07-27T23:33:15.824",
+      "is_private": false
+    }
+  },
+  {
+    "pk": 8,
+    "model": "blip.entry",
+    "fields": {
+      "body": "Site looks pretty good as a basic news reader, but I think I can make it a little more social. First, the ability to login and submit a feed for review. Only accepting RSS/ATOM feeds atm.",
+      "entry_type": 1,
+      "body_html": "<p>Site looks pretty good as a basic news reader, but I think I can make it a little more social. First, the ability to login and submit a feed for review. Only accepting RSS/ATOM feeds atm.</p>",
+      "owner": [
+        "underlost"
+      ],
+      "pub_date": "2012-07-27T20:17:21.414",
+      "is_private": false
+    }
+  },
+  {
+    "pk": 7,
+    "model": "blip.entry",
+    "fields": {
+      "body": "Should probably move off shared_database and get its own dev db.",
+      "entry_type": 1,
+      "body_html": "<p>Should probably move off shared_database and get its own dev db.</p>",
+      "owner": [
+        "underlost"
+      ],
+      "pub_date": "2012-07-27T19:59:10.729",
+      "is_private": false
+    }
+  },
+  {
+    "pk": 6,
+    "model": "blip.entry",
+    "fields": {
+      "body": "CSS in place. Starting to look good.",
+      "entry_type": 1,
+      "body_html": "<p>CSS in place. Starting to look good.</p>",
+      "owner": [
+        "underlost"
+      ],
+      "pub_date": "2012-07-27T19:57:46.263",
+      "is_private": false
+    }
+  },
+  {
+    "pk": 5,
+    "model": "blip.entry",
+    "fields": {
+      "body": "Straight forward django project. Right now comprised of an aggregator and accounts app. Using django-push and superfeedr to ged updates from sites. ",
+      "entry_type": 1,
+      "body_html": "<p>Straight forward django project. Right now comprised of an aggregator and accounts app. Using django-push and superfeedr to ged updates from sites. </p>",
+      "owner": [
+        "underlost"
+      ],
+      "pub_date": "2012-07-27T19:53:32.259",
+      "is_private": false
+    }
+  },
+  {
+    "pk": 4,
+    "model": "blip.entry",
+    "fields": {
+      "body": "Been trying to come up with an idea to use jadedgamer.net for. playing around with a news reader idea. Lets see where this goes.",
+      "entry_type": 1,
+      "body_html": "<p>Been trying to come up with an idea to use jadedgamer.net for. playing around with a news reader idea. Lets see where this goes.</p>",
+      "owner": [
+        "underlost"
+      ],
+      "pub_date": "2012-07-27T19:45:07.659",
+      "is_private": false
+    }
+  }
+]

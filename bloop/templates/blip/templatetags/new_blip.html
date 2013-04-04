@@ -1,0 +1,22 @@
+{% load bootstrap_field %}
+
+<div class="modal hide fade" id="new-blip" tabindex="-1" role="dialog" aria-labelledby="new-blip-Label" aria-hidden="true">
+    <div class="modal-header">
+        <h3>New Blip</h3>
+    </div>
+    <form enctype="multipart/form-data" action="{% url blip-add-entry %}" method="post">
+        {% csrf_token %}
+        <div class="modal-body">
+            {% csrf_token %}
+            {{form.body}}
+            <label class="checkbox">
+            {{form.is_private}} Hide Blip from public?
+            </label>
+            
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Post</button>
+            <a href="#new-blip" data-toggle="modal" class="btn">Cancel</a>
+        </div>
+    </form>
+</div>

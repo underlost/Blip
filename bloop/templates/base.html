@@ -1,0 +1,99 @@
+<!DOCTYPE html> 
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js home"> <!--<![endif]--> 
+ 
+<head> 
+<title>{% block title %}{% endblock %}Blip</title> 
+<link rel="profile" href="http://gmpg.org/xfn/11" /> 
+<link rel="canonical" href="http://blip.underlost.net/" /> 
+ 
+<!-- Favicons --> 
+<link rel="shortcut icon" href="/static/img/favicon.ico"/> 
+<link rel="apple-touch-icon" href="/static/img/iphone.png"/> 
+ 
+<!-- Meta --> 
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="author" content="Tyler Rilling" />
+<meta name="robots" content="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<meta name="description" content="A microblog of sorts." /> 
+ 
+<!-- RSS --> 
+<link rel="alternate" type="application/rss+xml" title="Blip Global RSS" href="http://blip.underlost.net/feed/" /> 
+
+<!-- Stylesheets -->	
+<link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/static/css/site.css" type="text/css" media="screen" />
+{% block extra %}{% endblock %}
+
+<!-- Javascript --> 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="//use.typekit.net/ais5cdw.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--> 
+ 
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-1247925-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script> 
+</head> 
+ 
+<body class="{% block page %}{% endblock %}">
+
+<div id="wrapper">
+
+	<header id="top" role="masthead">
+		<h1 title="Blip"><a href="/">Blip.</a></h1>
+		
+		<div class="btn-toolbar">
+		<div class="btn-group">
+		  <a href="/" class="btn"><i class="icon-home"></i> Home</a>
+		  <a href="/lists/" class="btn"><i class="icon-tasks"></i>  Lists</a>
+		  {% if user.is_authenticated %}<a href="/mine/" class="btn"><i class="icon-user"></i> Mine</a>{% endif %}
+		</div>
+		{% if user.is_authenticated %}
+			<div class="btn-group">
+			<a href="#new-blip" data-toggle="modal" class="btn btn-info"><i class="icon-edit icon-white"></i></a>
+			</div>
+		{% endif %}
+		</div>
+	</header>
+	
+	{% if messages %}
+	{% for message in messages %}
+	<div class="alert alert-success">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<span{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</span>
+	</div>
+	{% endfor %}
+	{% endif %}	
+			
+ 	{% block content %}{% endblock %}
+ 		
+ 	<footer>
+ 		<p id="copyright">&copy; Copyright 2013 Tyler Rilling.</p> 
+ 	</footer>
+</div>
+
+{% load new_blip %}
+{% new_blip request %}
+
+</body> 
+</html>
