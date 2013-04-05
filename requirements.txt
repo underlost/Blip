@@ -1,6 +1,6 @@
 #Server
 Django==1.5.1
-gunicorn
+gunicorn==0.17.2
 psycopg2==2.4.5
 dj-database-url==0.2.0
 wsgiref==0.1.2
