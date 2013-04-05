@@ -10,7 +10,6 @@ django-celery>=3.0.11
 
 Markdown==2.0.3
 django-picklefield
-django-registration == 0.7
 Pillow==1.7.7
 
 #Storage
