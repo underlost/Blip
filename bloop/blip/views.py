@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
-from django.views.generic.list_detail import object_list
+from django.views.generic.list import ListView
 
 from .models import EntryType, Entry
 from .forms import EntryTypeModelForm, EntryModelForm
@@ -27,14 +27,19 @@ def lists_for_user(request, username):
 	ctx = {'entrytype_list': EntryType.objects.filter(owner__username=username)}
 	return render(request, 'blip/lists_for_user.html', ctx)
 
-def entry_list(request, username, entry_type_slug):
-	#Shows the latest entries for a given list.
-	entry_type = get_object_or_404(EntryType, slug=entry_type_slug, owner__username=username)
-	return object_list(request,
-		queryset = Entry.objects.filter(entry_type=entry_type, is_private=False),
-		paginate_by = 25,
-		extra_context = {'entry_type': entry_type},
-	)
+class entry_list(ListView):
+	paginate_by = 25
+	template_name = 'blip/entry_list.html'
+	
+	def get_queryset(self):
+		self.u = get_object_or_404(User, username=self.kwargs.pop('username'))
+		self.list = get_object_or_404(EntryType, slug=self.kwargs.pop('entry_type_slug'), owner__username=self.u)
+		return Entry.objects.order_by('-date_added').filter(entry_type=self.list, is_private=False)
+
+	def get_context_data(self, **kwargs):
+		context = super(entry_list, self).get_context_data(**kwargs)
+		context.update({'entry_type': entry_type, 'user_obj': self.u,})
+		return context
 
 def entry(request, username, entry_id):
 	#Shows a single entry.
