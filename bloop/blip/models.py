@@ -41,9 +41,6 @@ class EntryType(models.Model):
 	
 	def items(self):
 		return Entry.objects.filter(entry_type=self)
-
-	class Meta:
-		ordering = ('-pub_date',)
 	
 	def create_thumbnail(self, content_type=None):
 		# original code for this method came from
@@ -92,7 +89,10 @@ class EntryType(models.Model):
 		self.slug = slugify(self.name)
 		super(EntryType, self).save(*args, **kwargs)
 		
-	
+	class Meta:
+		ordering = ('-pub_date',)
+		
+		
 class Entry(models.Model):
 	body 		= models.TextField()
 	body_html 	= models.TextField()
