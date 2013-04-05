@@ -4,7 +4,7 @@
     <div class="modal-header">
         <h3>New Blip</h3>
     </div>
-    <form enctype="multipart/form-data" action="{% url blip-add-entry %}" method="post">
+    <form enctype="multipart/form-data" action="{% url 'blip-add-entry' %}" method="post">
         {% csrf_token %}
         <div class="modal-body">
             {% csrf_token %}

@@ -8,14 +8,14 @@
 
 <section class="contents" id="lists">
 
-<h3 class="header">Public lists <small><a class="view-all" href="{% url blip-add-list %}">Create a new list</a></small></h3>
+<h3 class="header">Public lists <small><a class="view-all" href="{% url 'blip-add-list' %}">Create a new list</a></small></h3>
 
 {% for entrytype in entrytype_list %}
 <div id="{{ entrytype.slug }}" class="blip-group">
 
-  <h2>{{ entrytype.name }} <a class="view-all" href="{% url blip-entry-list entrytype.owner entrytype.slug %}">View all</a></h2>
+  <h2>{{ entrytype.name }} <a class="view-all" href="{% url 'blip-entry-list' entrytype.owner entrytype.slug %}">View all</a></h2>
   {% if entrytype.can_self_add %}
-    <a class="add-more" href="{% url blip-add-entry entrytype.slug %}">Post something</a>
+    <a class="add-more" href="{% url 'blip-add-entry' entrytype.slug %}">Post something</a>
   {% endif %}
  
 {% comment %} 

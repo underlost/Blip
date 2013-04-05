@@ -23,7 +23,7 @@
    		{% if profile_obj.location %}<li><i class="icon-map-marker"></i> {{ profile_obj.location }}</li>{% endif %}
     </ul>
     
-    <!-- <span><a href="{% url blip-user-lists user_obj.username %}">Lists</a></span> -->
+    <!-- <span><a href="{% url 'blip-user-lists' user_obj.username %}">Lists</a></span> -->
 </div>
 
 <div class="submitted-feeds">
@@ -38,7 +38,7 @@
           	</span>
           	
           	<div class="entry">{{ entry.body_html|safe }}</div>
-          	<span class="date"><i class="icon-time"></i> <a href="{{ entry.get_absolute_url }}">{{ entry.pub_date|naturaltime }}</a></span> {% if entry.entry_type %}<span class="meta">in <a href="{% url blip-entry-list entry.entry_type.owner entry.entry_type.slug %}">{{entry.entry_type }}</a></span>{% endif %}
+          	<span class="date"><i class="icon-time"></i> <a href="{{ entry.get_absolute_url }}">{{ entry.pub_date|naturaltime }}</a></span> {% if entry.entry_type %}<span class="meta">in <a href="{% url 'blip-entry-list' entry.entry_type.owner entry.entry_type.slug %}">{{entry.entry_type }}</a></span>{% endif %}
           	
           </div>
           {% endfor %}

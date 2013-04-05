@@ -11,7 +11,7 @@
 <p>Your username and password didn't match. Please try again.</p>
 {% endif %}
 
-<form class="form-stacked" method="post" action="{% url django.contrib.auth.views.login %}">{% csrf_token %}
+<form class="form-stacked" method="post" action="{% url 'django.contrib.auth.views.login' %}">{% csrf_token %}
 
 <div class="clearfix"> 
 	<label for="username">Username</label> 
@@ -27,7 +27,7 @@
     </div> 
 </div><!-- /clearfix -->  
 
-<p><a href="{% url auth_password_reset %}">Forgot</a> your password?  <a href="{% url registration_register %}">Need an account</a>?</p>
+<p><a href="{% url 'auth_password_reset' %}">Forgot</a> your password?  <a href="{% url 'registration_register' %}">Need an account</a>?</p>
 
 <input class="btn primary small btn-info" type="submit" value="login" />
 <input type="hidden" name="next" value="{{ next }}" />

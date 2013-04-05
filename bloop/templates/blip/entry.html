@@ -4,12 +4,12 @@
 {% block content %}
 {% load humanize %}
 <section class="contents" id="blip">
-	{% if user.is_authenticated %}<a href="{% url blip-add-entry %}" class="btn btn-info" id="quickpost"><i class="icon-edit icon-white"></i></a>{% endif %}
+	{% if user.is_authenticated %}<a href="{% url 'blip-add-entry' %}" class="btn btn-info" id="quickpost"><i class="icon-edit icon-white"></i></a>{% endif %}
 	<h3 class="header">{{ entry.owner }} wrote...</h3>
 		
 	<div class="blip">
 		<div class="entry" id="blip-{{ entry.id }}">{{ entry.body_html|safe }}</div>
-		<p class="date"><i class="icon-time"></i> <a href="{{ entry.get_absolute_url }}">{{ entry.pub_date|naturaltime }}</a>{% if entry.entry_type %} in <a href="{% url blip-entry-list entry.entry_type.owner entry.entry_type.slug %}">{{entry.entry_type }}</a>{% endif %}.</p>
+		<p class="date"><i class="icon-time"></i> <a href="{{ entry.get_absolute_url }}">{{ entry.pub_date|naturaltime }}</a>{% if entry.entry_type %} in <a href="{% url 'blip-entry-list' entry.entry_type.owner entry.entry_type.slug %}">{{entry.entry_type }}</a>{% endif %}.</p>
 	</div>
 </section
 {% endblock %}
