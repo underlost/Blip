@@ -11,9 +11,8 @@ handler500 = 'bloop.views.server_error'
 urlpatterns = patterns('',
 
 	#Static
-	
-	url(r'^about/$', TemplateView.as_view(template_name="static/about.html") name="about"),
-	url(r'^api/$', TemplateView.as_view(template_name="static/api.html") name="api"),
+	url(r'^about/$', TemplateView.as_view(template_name="static/about.html")),
+	url(r'^api/$', TemplateView.as_view(template_name="static/api.html")),
 	
 	#Apps
 	url(r'^admin/', include(admin.site.urls)),
