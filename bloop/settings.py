@@ -55,12 +55,16 @@ LANGUAGE_CODE = 'en-us'
 SITE_ID = 1
 USE_I18N = False
 USE_L10N = False
-AUTH_PROFILE_MODULE = 'accounts.Profile'
 
-MEDIA_ROOT = '/media/'
-MEDIA_URL = 'http://media.underlost.net/sites/blip/'
-#STATIC_ROOT = '/static/'
+AUTH_PROFILE_MODULE = 'accounts.Profile'
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+
+MEDIA_ROOT = os.path.join(SITE_ROOT, 'media/')
+MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(SITE_ROOT, 'static/')
 STATIC_URL = '/static/'
+
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 STATICFILES_DIRS = ()
 
