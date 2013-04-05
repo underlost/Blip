@@ -4,11 +4,6 @@ from django.utils.translation import ugettext, ugettext_lazy as _
 from django.contrib.auth.models import User
 from .models import Profile
 
-class RegistrationForm(RegistrationFormUniqueEmail):
-    def __init__(self, *args, **kwargs):
-        super(RegistrationForm, self).__init__(*args, **kwargs)
-        del self.fields["tos"]
-
 class ProfileForm(forms.ModelForm):
     """
     A form for editing user profiles.
