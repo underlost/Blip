@@ -26,7 +26,7 @@ UTILS_ROOT    = os.path.join(CURRENT_DIR, 'utils')
 if '/utils' not in ' '.join(sys.path):
     sys.path.append(UTILS_ROOT)
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (('Tyler Rilling', 'tyler@underlost.net'))
@@ -76,7 +76,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
-SECRET_KEY = 'wzqxrx6a7a=2a^ubw$_a_ozah+cvtslmx81f$8ecfdmgk=wtty'
+SECRET_KEY = os.environ.get('DJANO_SECRET_KEY')
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
