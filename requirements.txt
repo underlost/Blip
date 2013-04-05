@@ -1,5 +1,5 @@
 #Server
-Django
+Django==1.5.1
 gunicorn
 psycopg2==2.4.5
 dj-database-url==0.2.0
@@ -11,3 +11,9 @@ django-celery>=3.0.11
 Markdown==2.0.3
 django-picklefield
 django-registration == 0.7
+Pillow==1.7.7
+
+#Storage
+boto==2.2.1
+django-queued-storage==0.5
+django-storages==1.1.4
