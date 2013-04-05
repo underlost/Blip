@@ -113,7 +113,6 @@ INSTALLED_APPS = (
     'djcelery',
     'gunicorn',
     'south',
-    'registration',
     
     #Internal
     'bloop.accounts',

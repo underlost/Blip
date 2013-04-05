@@ -13,6 +13,4 @@ def new_blip(request):
 
 @register.simple_tag
 def new_blip(request):
-    return render_to_string('blip/templatetags/new_blip.html',
-        {'form': EntryModelForm()},
-        context_instance=RequestContext(request))
+    return render_to_string('blip/templatetags/new_blip.html', {'form': EntryModelForm()}, context_instance=RequestContext(request))
